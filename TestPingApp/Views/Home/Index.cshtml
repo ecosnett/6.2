@@ -1,0 +1,96 @@
+﻿@model List<YourNamespace.Models.MyDataModel>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Table</title>
+    <style>
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+            text-align: left;
+        }
+
+        table {
+            width: 75%;
+            margin: auto;
+        }
+
+        .ping-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+
+        .ping-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Search Bar -->
+    <form method="get" action="/Home/Index" style="text-align: center; margin-bottom: 20px;">
+        <input type="text" name="searchQuery" placeholder="Search..." value="@ViewData["searchQuery"]" />
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Table Displaying Data -->
+    <table>
+        <thead>
+            <tr>
+                <th>Select</th>
+                <th>Name</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var site in Model)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" class="site-checkbox" data-id="@site.Id" data-url="@site.Url">
+                    </td>
+                    <td>@site.Url</td>
+                    <td id="result-@site.Id">
+                        <span style="color: black;">Waiting...</span>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Ping Button Centered at Bottom -->
+    <div class="ping-button-container">
+        <button class="ping-button" onclick="pingSelectedSites()">Ping Selected Sites</button>
+    </div>
+
+    <script>
+        async function pingSelectedSites() {
+            const checkboxes = document.querySelectorAll('.site-checkbox:checked');
+            checkboxes.forEach(async checkbox => {
+                const url = checkbox.getAttribute('data-url');
+                const resultId = `result-${checkbox.getAttribute('data-id')}`;
+                try {
+                    const response = await fetch(`/PingUrl?url=${encodeURIComponent(url)}`);
+                    const result = await response.json();
+                    const resultElement = document.getElementById(resultId);
+                    if (result.success) {
+                        resultElement.innerHTML = `<span style="color: green;">${result.message}</span>`;
+                    } else {
+                        resultElement.innerHTML = `<span style="color: red;">${result.message}</span>`;
+                    }
+                } catch (error) {
+                    resultElement.innerHTML = '<span style="color: red;">Ping Failed</span>';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
+
