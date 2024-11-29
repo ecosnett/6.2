@@ -19,7 +19,7 @@ RUN dotnet publish TestPingApp/TestPingApp.csproj -c Release -o /app/TestPingApp
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-PingTest
 WORKDIR /app
 
-COPY PingTest/Program.cs PingTest/
+COPY PingTest/UnitTest.cs PingTest/
 RUN dotnet new console -n PingTest --force
 WORKDIR /app/PingTest
 RUN dotnet publish -c Release -o /app/PingTest_out
