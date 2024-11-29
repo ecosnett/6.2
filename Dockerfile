@@ -1,22 +1,19 @@
-# Stage 1: Build and test projects
+# Stage 1: Build TestPingTest project
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Copy project files
+# Copy and restore dependencies
 COPY TestPingApp/TestPingApp.csproj TestPingApp/
 COPY TestPingTest/TestPingTest.csproj TestPingTest/
-RUN dotnet restore TestPingApp/TestPingApp.csproj
 RUN dotnet restore TestPingTest/TestPingTest.csproj
 
-# Debug: Check file structure
-RUN ls -R /src
+# Debug: List files and project structure
+RUN ls -R /src/TestPingTest
+RUN cat /src/TestPingTest/TestPingTest.csproj
 
-# Copy remaining source code
-COPY TestPingApp TestPingApp/
-COPY TestPingTest TestPingTest/
-
-# Debug: Check after copying files
-RUN ls -R /src
+# Copy source files
+COPY TestPingApp/ TestPingApp/
+COPY TestPingTest/ TestPingTest/
 
 # Build TestPingTest project
 RUN dotnet build TestPingTest/TestPingTest.csproj -c Release --no-restore
