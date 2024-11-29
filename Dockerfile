@@ -6,40 +6,33 @@ WORKDIR /src
 COPY TestPingApp/TestPingApp.csproj TestPingApp/
 COPY TestPingTest/TestPingTest.csproj TestPingTest/
 
-# Restore dependencies for both projects
-WORKDIR /src/TestPingApp
-RUN dotnet restore ../TestPingApp/TestPingApp.csproj
+# Restore dependencies
+RUN dotnet restore TestPingApp/TestPingApp.csproj
+RUN dotnet restore TestPingTest/TestPingTest.csproj
 
-WORKDIR /src/TestPingTest
-RUN dotnet restore ../TestPingTest/TestPingTest.csproj
-
-# Copy the rest of the application source code
-WORKDIR /src
+# Copy the rest of the source code
 COPY TestPingApp TestPingApp/
 COPY TestPingTest TestPingTest/
 
-# Build TestPingTest project
+# Build and test TestPingTest
 RUN dotnet build TestPingTest/TestPingTest.csproj -c Release --no-restore
-
-# Run unit tests for TestPingTest
 RUN dotnet test TestPingTest/TestPingTest.csproj --no-build --verbosity normal
 
-# Publish TestPingApp project
+# Publish TestPingApp
 RUN dotnet publish TestPingApp/TestPingApp.csproj -c Release -o /out/TestPingApp
 
 # Stage 2: Build PingTest project
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-PingTest
 WORKDIR /src
 
-# Copy PingTest project and dependencies
+# Copy PingTest project
 COPY PingTest/ PingTest/
-WORKDIR /src/PingTest
-RUN dotnet restore PingTest.csproj
 
-# Publish PingTest project
-RUN dotnet publish PingTest.csproj -c Release -o /out/PingTest
+# Restore and publish PingTest
+RUN dotnet restore PingTest/PingTest.csproj
+RUN dotnet publish PingTest/PingTest.csproj -c Release -o /out/PingTest
 
-# Stage 3: Final runtime stage
+# Stage 3: Runtime
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
 
@@ -47,16 +40,17 @@ WORKDIR /app
 COPY --from=build /out/TestPingApp ./TestPingApp
 COPY --from=build-PingTest /out/PingTest ./PingTest
 
-# Copy the entrypoint script
+# Copy entrypoint script
 COPY entrypoint.sh /entrypoint.sh
 
-# Install necessary packages and set permissions
+# Install curl and set permissions
 RUN apt-get update && apt-get install -y curl && chmod +x /entrypoint.sh
 
-# Set environment variables and expose ports
+# Set environment and expose port
 ENV ASPNETCORE_URLS=http://0.0.0.0:8081
 EXPOSE 8081
 
-# Set the entrypoint
+# Set entrypoint
 ENTRYPOINT ["/entrypoint.sh"]
+
 
