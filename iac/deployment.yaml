@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: pa-csharp-app
-        image: ecos04/mvc-repo:1.0
+        image: ecos04/mvc-repo:latest
         ports:
         - containerPort: 80
 ---
