@@ -1,44 +1,50 @@
-# Stage 1: Build and test AddTwoNumbers and Test projects
+# Stage 1: Build and test projects
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-WORKDIR /app
+WORKDIR /src
 
+# Copy project files and restore dependencies
 COPY TestPingApp/TestPingApp.csproj TestPingApp/
 COPY TestPingTest/TestPingTest.csproj TestPingTest/
+RUN dotnet restore TestPingApp/TestPingApp.csproj
+RUN dotnet restore TestPingTest/TestPingTest.csproj
+
+# Copy the rest of the source code
 COPY TestPingApp TestPingApp/
 COPY TestPingTest TestPingTest/
 
-RUN dotnet restore TestPingTest/TestPingTest.csproj
+# Build and test
 RUN dotnet build TestPingTest/TestPingTest.csproj -c Release --no-restore
+RUN dotnet test TestPingTest/TestPingTest.csproj --no-build --verbosity normal
 
-# Run unit tests
-RUN dotnet TestPingTest TestPingTest/TestPingTest.csproj --no-build --verbosity normal
+# Publish TestPingApp
+RUN mkdir -p /out/TestPingApp && dotnet publish TestPingApp/TestPingApp.csproj -c Release -o /out/TestPingApp
 
-RUN dotnet publish TestPingApp/TestPingApp.csproj -c Release -o /app/TestPingApp_out
-
-# Stage 2: Build ping_test project
+# Stage 2: Build PingTest project
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-PingTest
-WORKDIR /app
+WORKDIR /src
 
-COPY PingTest/Program.cs PingTest/
-RUN dotnet new console -n PingTest --force
-WORKDIR /app/PingTest
-RUN dotnet publish -c Release -o /app/PingTest_out
+# Copy PingTest project
+COPY PingTest/ PingTest/
+RUN dotnet restore PingTest/PingTest.csproj
 
-# Stage 3: Final runtime stage
+# Publish PingTest
+RUN mkdir -p /out/PingTest && dotnet publish PingTest/PingTest.csproj -c Release -o /out/PingTest
+
+# Stage 3: Runtime
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
 
-COPY --from=build /app/TestPingApp_out .               
-COPY --from=build-PingTest /app/PingTest_out /PingTest  
+# Copy outputs from build stages
+COPY --from=build /out/TestPingApp ./TestPingApp
+COPY --from=build-PingTest /out/PingTest ./PingTest
 
+# Add entrypoint script
 COPY entrypoint.sh /entrypoint.sh
+RUN apt-get update && apt-get install -y curl && chmod +x /entrypoint.sh
 
-RUN apt-get update && apt-get install -y curl
-RUN chmod +x /entrypoint.sh
-
-# Set environment variables and expose ports
+# Set environment and expose port
 ENV ASPNETCORE_URLS=http://0.0.0.0:8081
 EXPOSE 8081
 
-# Set the entrypoint
+# Entrypoint
 ENTRYPOINT ["/entrypoint.sh"]
