@@ -1,0 +1,81 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  dockerRegistryServiceConnection: 'image-repo' 
+  imageName: 'mvc-image'
+  containerRegistry: 'image-repo' 
+  aksClusterName: 'pa-aks-cluster'  
+  resourceGroup: 'NevilleMPN'  
+  azureSubscription: 'ffdad67a-5a33-43cc-9aa4-c2f945e44d6e'  
+
+jobs:
+- job: Build_and_Push_Docker_Image
+  displayName: 'Build Docker Image and Push to ACR'
+  steps:
+    - task: Bash@3
+      displayName: 'Install Docker'
+      inputs:
+        targetType: 'inline'
+        script: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io
+          sudo usermod -aG docker $(whoami)
+
+    - script: |
+        docker build -t $(containerRegistry)/$(imageName):$(Build.BuildId) .
+        docker push $(containerRegistry)/$(imageName):$(Build.BuildId)
+      displayName: 'Build and Push Docker Image'
+
+- job: Terraform_Provision
+  displayName: 'Provision Resources using Terraform'
+  dependsOn: Build_and_Push_Docker_Image
+  steps:
+    - script: |
+        sudo apt-get update
+        sudo apt-get install -y gnupg software-properties-common curl
+        curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+        echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+        sudo apt-get update && sudo apt-get install -y terraform
+      displayName: 'Install Terraform'
+
+    - script: |
+        cd ./iac
+        terraform init
+        terraform apply -auto-approve
+      displayName: 'Run Terraform to Provision Resources'
+
+- job: Ansible_Playbook
+  displayName: 'Run Ansible Playbook to Configure Linux VM'
+  dependsOn: Terraform_Provision
+  steps:
+    - script: |
+        sudo apt-get update
+        sudo apt-get install -y python3 python3-pip
+        pip3 install ansible
+      displayName: 'Install Ansible'
+
+    - script: |
+        ansible-playbook -i ./iac/inventory.ini ./iac/playbook.yml -v
+      displayName: 'Run Ansible Playbook'
+
+- job: Kubernetes_Deployment
+  displayName: 'Deploy Docker Container to AKS'
+  dependsOn: Ansible_Playbook
+  steps:
+    - script: |
+        sudo apt-get update
+        sudo apt-get install -y curl apt-transport-https
+        curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+      displayName: 'Install Azure CLI'
+
+    - script: |
+        az aks get-credentials --resource-group $(resourceGroup) --name $(aksClusterName)
+      displayName: 'Get AKS Credentials'
+
+    - script: |
+        kubectl apply -f ./deployment.yaml
+      displayName: 'Deploy to AKS'
