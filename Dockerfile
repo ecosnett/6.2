@@ -1,6 +1,6 @@
 # Stage 1: Build and test AddTwoNumbers and Test projects
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-WORKDIR /app
+WORKDIR /
 
 COPY TestPingApp/TestPingApp.csproj TestPingApp/
 COPY TestPingTest/TestPingTest.csproj TestPingTest/
@@ -13,23 +13,22 @@ RUN dotnet build TestPingTest/TestPingTest.csproj -c Release --no-restore
 # Run unit tests
 RUN dotnet TestPingTest TestPingTest/TestPingTest.csproj --no-build --verbosity normal
 
-RUN dotnet publish TestPingApp/TestPingApp.csproj -c Release -o /app/TestPingApp_out
+RUN dotnet publish TestPingApp/TestPingApp.csproj -c Release -o /TestPingApp_out
 
 # Stage 2: Build ping_test project
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-PingTest
-WORKDIR /app
+WORKDIR /
 
 COPY PingTest/UnitTest1.cs PingTest/
 RUN dotnet new console -n PingTest --force
-WORKDIR /app/PingTest
-RUN dotnet publish -c Release -o /app/PingTest_out
+RUN dotnet publish PingTest/PingTest.csproj -c Release -o /PingTest_out
 
 # Stage 3: Final runtime stage
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
-WORKDIR /app
+WORKDIR /
 
-COPY --from=build /app/TestPingApp_out .               
-COPY --from=build-PingTest /app/PingTest_out /PingTest  
+COPY --from=build /TestPingApp_out .               
+COPY --from=build-PingTest /PingTest_out /PingTest  
 
 COPY entrypoint.sh /entrypoint.sh
 
