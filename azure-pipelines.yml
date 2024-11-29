@@ -26,8 +26,8 @@ jobs:
           sudo usermod -aG docker $(whoami)
 
     - script: |
-        docker build -t $(containerRegistry)/$(imageName):$(Build.BuildId) .
-        docker push $(containerRegistry)/$(imageName):$(Build.BuildId)
+        docker build -t ecos04/mvc-repo:latest .
+        docker push ecos04/mvc-repo:latest
       displayName: 'Build and Push Docker Image'
 
 - job: Terraform_Provision
