@@ -19,8 +19,8 @@ RUN dotnet publish TestPingApp/TestPingApp.csproj -c Release -o /TestPingApp_out
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-PingTest
 WORKDIR /
 
-COPY PingTest/UnitTest1.cs PingTest/
-RUN dotnet new console -n PingTest --force
+COPY PingTest/ PingTest/
+RUN dotnet restore PingTest/PingTest.csproj
 RUN dotnet publish PingTest/PingTest.csproj -c Release -o /PingTest_out
 
 # Stage 3: Final runtime stage
