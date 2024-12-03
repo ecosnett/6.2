@@ -1,42 +1,48 @@
-# Stage 1: Build and test projects
+# Stage 1: Build and test TestPingApp and TestPingTest projects
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
+# Copy project files
 COPY TestPingApp/TestPingApp.csproj TestPingApp/
 COPY TestPingTest/TestPingTest.csproj TestPingTest/
-RUN dotnet restore TestPingApp/TestPingApp.csproj
+
+# Restore dependencies
 RUN dotnet restore TestPingTest/TestPingTest.csproj
 
-# Copy the rest of the source code
-COPY TestPingApp TestPingApp/
-COPY TestPingTest TestPingTest/
+# Copy remaining source files
+COPY TestPingApp/ TestPingApp/
+COPY TestPingTest/ TestPingTest/
 
-RUN dotnet restore TestPingTest/TestPingTest.csproj
+# Build and test
 RUN dotnet build TestPingTest/TestPingTest.csproj -c Release --no-restore
+RUN dotnet test TestPingTest/TestPingTest.csproj --no-build --verbosity normal
 
-# Run unit tests
-RUN dotnet TestPingTest TestPingTest/TestPingTest.csproj --no-build --verbosity normal
-
+# Publish TestPingApp
 RUN dotnet publish TestPingApp/TestPingApp.csproj -c Release -o /app/TestPingApp_out
 
-# Stage 2: Build ping_test project
+# Stage 2: Build PingTest project
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-PingTest
-WORKDIR /app
-
-COPY PingTest/Program.cs PingTest/
-RUN dotnet new console -n PingTest --force
 WORKDIR /app/PingTest
+
+# Copy source files
+COPY PingTest/Program.cs .
+
+# Initialize and publish PingTest project
+RUN dotnet new console --force
 RUN dotnet publish -c Release -o /app/PingTest_out
 
 # Stage 3: Final runtime stage
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
 
+# Copy build outputs from previous stages
 COPY --from=build /app/TestPingApp_out .               
 COPY --from=build-PingTest /app/PingTest_out /PingTest  
 
+# Copy entrypoint script
 COPY entrypoint.sh /entrypoint.sh
 
+# Install additional dependencies
 RUN apt-get update && apt-get install -y curl
 RUN chmod +x /entrypoint.sh
 
@@ -46,4 +52,3 @@ EXPOSE 8081
 
 # Set the entrypoint
 ENTRYPOINT ["/entrypoint.sh"]
-
