@@ -1,0 +1,8 @@
+is_global = true
+build_property.RootNamespace = TestPingApp
+build_property.ProjectDir = D:\Users\edward\codes\C#\6.2\PingProxyWebApp\TestPingApp\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 

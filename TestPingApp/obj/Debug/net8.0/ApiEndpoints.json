@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "TestPingApp.Controllers.PingApiController",
+    "Method": "PingUrl",
+    "RelativePath": "api/ping",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "url",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

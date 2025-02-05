@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\PingTest",
-    "\\TestPingApp\\Views\\Home",
-    "\\TestPingTest"
+    ""
   ],
-  "SelectedNode": "\\TestPingTest\\UnitTest1.cs",
+  "SelectedNode": "\\TestPingApp",
   "PreviewInSolutionExplorer": false
 }

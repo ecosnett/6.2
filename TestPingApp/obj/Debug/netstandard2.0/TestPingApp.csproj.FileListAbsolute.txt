@@ -1,0 +1,6 @@
+D:\Users\edward\codes\C#\6.2\PingProxyWebApp\TestPingApp\obj\Debug\netstandard2.0\TestPingApp.csproj.AssemblyReference.cache
+D:\Users\edward\codes\C#\6.2\PingProxyWebApp\TestPingApp\obj\Debug\netstandard2.0\TestPingApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\edward\codes\C#\6.2\PingProxyWebApp\TestPingApp\obj\Debug\netstandard2.0\TestPingApp.AssemblyInfoInputs.cache
+D:\Users\edward\codes\C#\6.2\PingProxyWebApp\TestPingApp\obj\Debug\netstandard2.0\TestPingApp.AssemblyInfo.cs
+D:\Users\edward\codes\C#\6.2\PingProxyWebApp\TestPingApp\obj\Debug\netstandard2.0\TestPingApp.csproj.CoreCompileInputs.cache
+D:\Users\edward\codes\C#\6.2\PingProxyWebApp\TestPingApp\obj\Debug\netstandard2.0\TestPingApp.sourcelink.json

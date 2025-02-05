@@ -1,0 +1,62 @@
+﻿@model List<TestPingApp.Models.LogDataModel>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Logs</title>
+    <style>
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+            text-align: left;
+        }
+
+        table {
+            width: 75%;
+            margin: auto;
+        }
+
+        .ping-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+
+        .ping-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
+        <form method="get" action="/Log/Index">
+            <input type="text" name="SearchQuery" placeholder="Search by Name..." />
+            <input type="date" name="DateSearchQuery" />
+            <button type="submit">Search</button>
+        </form>
+
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Url</th>
+                <th>Message</th>
+                <th>TimeStamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var log in Model.Select((value, index) => new { value, index }))
+            {
+                <tr>
+                    <td>@log.value.Url</td>
+                    <td>@log.value.Message</td>
+                    <td>@log.value.TimeStamp</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

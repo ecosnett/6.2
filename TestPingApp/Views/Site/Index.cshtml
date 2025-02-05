@@ -1,0 +1,111 @@
+﻿@model List<TestPingApp.Models.SiteDataModel>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Data Table</title>
+    <style>
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+            text-align: left;
+        }
+
+        table {
+            width: 75%;
+            margin: auto;
+        }
+
+        .ping-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+
+        .ping-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form method="get" action="/Site/Index" style="text-align: center; margin-bottom: 20px;">
+        <input type="text" name="searchQuery" placeholder="Search..." value="@ViewData["searchQuery"]" />
+        <button type="submit">Search</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Select</th>
+                <th>Name</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var site in Model.Select((value, index) => new { value, index }))
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" class="site-checkbox" data-id="@site.index" data-url="@site.value.Url">
+                    </td>
+                    <td>@site.value.Url</td>
+                    <td>
+                        <span id="result-@site.index" style="color: black;">Waiting...</span>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+    <div class="ping-button-container">
+        <button class="ping-button" onclick="pingSelectedSites()">Ping Selected Sites</button>
+    </div>
+
+    <div class="ping-button-container">
+        <button class="ping-button" onclick="window.location.href='https://localhost:7197/Log/index';">Display Logs</button>
+    </div>
+
+    <script>
+        async function pingSelectedSites() {
+            console.log("Ping button clicked.");
+            const checkboxes = document.querySelectorAll('.site-checkbox:checked');
+
+            checkboxes.forEach(async checkbox => {
+                const url = checkbox.getAttribute('data-url');
+                const resultId = `result-${checkbox.getAttribute('data-id')}`;
+                const resultElement = document.getElementById(resultId);
+
+                if (!resultElement) {
+                    console.error(`Element with ID ${resultId} not found.`);
+                    return;
+                }
+
+                console.log(`Sending request to: /api/ping?url=${url}`);
+
+                try {
+                    const response = await fetch(`/api/ping?url=${encodeURIComponent(url)}`);
+                    if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+
+                    const result = await response.json();
+                    console.log("API Response:", result);
+
+                    resultElement.innerHTML = result.success
+                        ? `<span style="color: green;">${result.message}</span>`
+                        : `<span style="color: red;">${result.message}</span>`;
+                } catch (error) {
+                    console.error("Ping failed:", error);
+                    resultElement.innerHTML = '<span style="color: red;">Ping Function Failed</span>';
+                }
+            });
+        }
+  
+
+    </script>
+</body>
+</html>
+
+
