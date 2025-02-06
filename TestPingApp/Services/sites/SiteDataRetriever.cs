@@ -9,26 +9,45 @@ namespace TestPingApp.Services.sites
     {
         private readonly string _connectionString = "Data Source=D:\\Users\\edward\\codes\\C#\\PingWebApp\\sites.db";
 
-        public async Task<List<SiteDataModel>> GetDataFromDatabaseAsync()
+        public async Task<List<SiteDataModel>> GetDataFromDatabaseAsync(string command)
         {
             var data = new List<SiteDataModel>();
 
-            using (var conn = new SQLiteConnection(_connectionString))
+            try
             {
-                await conn.OpenAsync();
-                using (var cmd = new SQLiteCommand("SELECT name, url FROM sites", conn))
-                using (var reader = await cmd.ExecuteReaderAsync())
+                if (string.IsNullOrWhiteSpace(command))
                 {
-                    while (await reader.ReadAsync())
+                    throw new ArgumentException("The command cannot be empty or whitespace.");
+                }
+
+                using (var conn = new SQLiteConnection(_connectionString))
+                {
+                    await conn.OpenAsync();
+                    using (var cmd = new SQLiteCommand(command, conn))
+                    using (var reader = await cmd.ExecuteReaderAsync())
                     {
-                        data.Add(new SiteDataModel
+                        while (await reader.ReadAsync())
                         {
-                            Name = reader.GetString(0),
-                            Url = reader.GetString(1)
-                        });
+                            data.Add(new SiteDataModel
+                            {
+                                Name = reader.GetString(0),
+                                Url = reader.GetString(1)
+                            });
+                        }
                     }
                 }
+
+                if (data.Count == 0)
+                {
+                    throw new KeyNotFoundException("No records found in the database.");
+                }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                throw;
+            }
+
             return data;
         }
     }

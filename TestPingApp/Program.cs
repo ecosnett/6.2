@@ -6,7 +6,7 @@ using TestPingApp.Services.sites;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Register services in DI container
+
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<SiteDataRetriever>(); 
 builder.Services.AddScoped<LogDataRetriever>();
