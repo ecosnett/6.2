@@ -19,7 +19,9 @@ namespace TestPingApp.Controllers
 
         public async Task<IActionResult> Index(string SearchQuery, string DateSearchQuery)
         {
-            var logs = await _dataRetriever.GetDataFromDatabaseAsync();
+            string command = "SELECT timestamp, url, message FROM site_logs";
+
+            var logs = await _dataRetriever.GetLogDataFromDatabaseAsync(command);
 
             if (!string.IsNullOrEmpty(SearchQuery))
             {

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\tests\\tests.csproj": {}
+    "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\tests\\tests.csproj": {}
   },
   "projects": {
-    "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\TestPingApp.csproj": {
+    "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\TestPingApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\TestPingApp.csproj",
+        "projectUniqueName": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\TestPingApp.csproj",
         "projectName": "TestPingApp",
-        "projectPath": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\TestPingApp.csproj",
+        "projectPath": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\TestPingApp.csproj",
         "packagesPath": "C:\\Users\\edward.NEVREG.000\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\obj\\",
+        "outputPath": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\NuGet.Config",
+          "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\NuGet.Config",
           "C:\\Users\\edward.NEVREG.000\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -83,20 +83,19 @@
         }
       }
     },
-    "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\tests\\tests.csproj": {
+    "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\tests\\tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\tests\\tests.csproj",
+        "projectUniqueName": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\tests\\tests.csproj",
         "projectName": "tests",
-        "projectPath": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\tests\\tests.csproj",
+        "projectPath": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\tests\\tests.csproj",
         "packagesPath": "C:\\Users\\edward.NEVREG.000\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\tests\\obj\\",
+        "outputPath": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\NuGet.Config",
           "C:\\Users\\edward.NEVREG.000\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -105,15 +104,16 @@
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://pkgs.dev.azure.com/Edward0862/agile/_packaging/ArtifactFeed/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\TestPingApp.csproj": {
-                "projectPath": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\TestPingApp.csproj"
+              "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\TestPingApp.csproj": {
+                "projectPath": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\TestPingApp.csproj"
               }
             }
           }
@@ -134,6 +134,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "EntityFrameworkCore.Testing.Moq": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
             "MSTest": {
               "target": "Package",
               "version": "[3.6.4, )"

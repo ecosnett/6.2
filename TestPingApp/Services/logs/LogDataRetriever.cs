@@ -7,16 +7,22 @@ namespace TestPingApp.Services.logs
 {
     public class LogDataRetriever
     {
-        private readonly string _connectionString = "Data Source=D:\\Users\\edward\\codes\\C#\\PingWebApp\\sites.db";
+        private readonly string _connectionString = "Data Source=D:\\Users\\edward\\codes\\C#\\PingWebApp\\sites.db;Version=3;BusyTimeout=30000;";
 
-        public async Task<List<LogDataModel>> GetDataFromDatabaseAsync()
+        public async Task<List<LogDataModel>> GetLogDataFromDatabaseAsync(string command)
         {
             var data = new List<LogDataModel>();
-
-            using (var conn = new SQLiteConnection(_connectionString))
+            try
             {
+                if (string.IsNullOrWhiteSpace(command))
+                {
+                    throw new ArgumentException("The command cannot be empty or whitespace.");
+                }
+
+                using (var conn = new SQLiteConnection(_connectionString))
+                {
                 await conn.OpenAsync();
-                using (var cmd = new SQLiteCommand("SELECT timestamp, url, message FROM site_logs", conn))
+                using (var cmd = new SQLiteCommand(command, conn))
                 using (var reader = await cmd.ExecuteReaderAsync())
                 {
                     while (await reader.ReadAsync())
@@ -29,7 +35,19 @@ namespace TestPingApp.Services.logs
                         });
                     }
                 }
+                    conn.Close();
+                }
+            if (data.Count == 0)
+            {
+                throw new KeyNotFoundException("No records found in the database.");
             }
+        }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                throw;
+            }
+
             return data;
         }
     }

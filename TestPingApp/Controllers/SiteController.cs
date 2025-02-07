@@ -18,8 +18,9 @@ namespace TestPingApp.Controllers
 
         public async Task<IActionResult> Index(string searchQuery)
         {
-            
-            var sites = await _dataRetriever.GetDataFromDatabaseAsync();
+            string command = "SELECT name, url FROM sites";
+
+            var sites = await _dataRetriever.GetDataFromDatabaseAsync(command);
 
        
             if (!string.IsNullOrEmpty(searchQuery))
