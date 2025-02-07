@@ -95,7 +95,6 @@ namespace TestPingApp.Controllers
             return $"{contextMessage}. Please try again later.";
         }
     }
-
     public class PingResult
     {
         public bool Success { get; set; }

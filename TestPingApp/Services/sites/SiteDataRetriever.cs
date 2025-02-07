@@ -7,7 +7,7 @@ namespace TestPingApp.Services.sites
 {
     public class SiteDataRetriever
     {
-        private readonly string _connectionString = "Data Source=D:\\Users\\edward\\codes\\C#\\PingWebApp\\sites.db";
+        private readonly string _connectionString = "Data Source=D:\\Users\\edward\\codes\\C#\\PingWebApp\\sites.db;Version=3;BusyTimeout=30000;";
 
         public async Task<List<SiteDataModel>> GetDataFromDatabaseAsync(string command)
         {
@@ -35,6 +35,7 @@ namespace TestPingApp.Services.sites
                             });
                         }
                     }
+                    conn.Close();
                 }
 
                 if (data.Count == 0)

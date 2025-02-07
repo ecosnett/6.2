@@ -19,7 +19,7 @@ namespace tests
         }
 
         [TestMethod]
-        public async Task Test_GetDataFromDatabaseAsync_ReturnData()
+        public async Task Test_GetSiteDataFromDatabaseAsync_ReturnData()
         {
             var dataRetriever = new SiteDataRetriever();
             string command = "SELECT name, url FROM sites where name = 'google'";
