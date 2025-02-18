@@ -20,7 +20,7 @@ namespace TestPingApp.Services.logs
                 using (var conn = new SqlConnection(_connectionString))
                 {
                     await conn.OpenAsync();
-                    using (var command = new SqlCommand("INSERT INTO logs (timestamp, url, message) VALUES (@timestamp, @url, @message)", conn)) 
+                    using (var command = new SqlCommand("INSERT INTO logs (timestamp, url, message) VALUES (@timestamp, @url, @message)", conn))
                     {
                         command.Parameters.AddWithValue("@timestamp", timestamp);
                         command.Parameters.AddWithValue("@url", url);
@@ -30,7 +30,7 @@ namespace TestPingApp.Services.logs
                     }
                 }
             }
-            catch (SqlException ex) when (ex.Number == 2627) 
+            catch (SqlException ex) when (ex.Number == 2627)
             {
                 Console.WriteLine($"Error: Duplicate record with timestamp {timestamp}. Cannot insert the same timestamp again.");
                 throw new Exception("Log data insertion failed due to duplicate timestamp.", ex);

@@ -8,12 +8,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Remove="Views\Shared\_Layout.cshtml.css" />
-		<None Remove="Views\Site\Index.cshtml~RF375af4b5.TMP" />
+	  <None Remove="Views\Shared\_Layout.cshtml.css" />
+	  <None Remove="Views\Site\Index.cshtml~RF375af4b5.TMP" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<Content Include="Views\Shared\_Layout.cshtml.css" />
+	  <Content Include="Views\Shared\_Layout.cshtml.css" />
 	</ItemGroup>
 
 	<ItemGroup>

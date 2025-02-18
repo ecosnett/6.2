@@ -253,3 +253,4 @@ D:\Users\edward\codes\C#\6.2\PingProxyWebApp\TestPingApp\obj\Debug\net8.0\refint
 D:\Users\edward\codes\C#\6.2\PingProxyWebApp\TestPingApp\obj\Debug\net8.0\TestPingApp.pdb
 D:\Users\edward\codes\C#\6.2\PingProxyWebApp\TestPingApp\obj\Debug\net8.0\TestPingApp.genruntimeconfig.cache
 D:\Users\edward\codes\C#\6.2\PingProxyWebApp\TestPingApp\obj\Debug\net8.0\ref\TestPingApp.dll
+D:\Users\edward\codes\C#\6.2\PingProxyWebApp\TestPingApp\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

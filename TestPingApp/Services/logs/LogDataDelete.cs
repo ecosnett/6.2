@@ -12,16 +12,16 @@ namespace TestPingApp.Services.logs
         {
             try
             {
-                using (var conn = new SqlConnection(_connectionString)) 
+                using (var conn = new SqlConnection(_connectionString))
                 {
                     await conn.OpenAsync();
 
-                    using (var command = new SqlCommand("DELETE FROM logs WHERE url = @url AND timestamp = @timestamp", conn)) 
+                    using (var command = new SqlCommand("DELETE FROM logs WHERE url = @url AND timestamp = @timestamp", conn))
                     {
                         command.Parameters.AddWithValue("@url", url);
                         command.Parameters.AddWithValue("@timestamp", timestamp);
 
-                        await command.ExecuteNonQueryAsync(); 
+                        await command.ExecuteNonQueryAsync();
                     }
                 }
             }
