@@ -2,8 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TestPingApp.Models; 
-using TestPingApp.Services.sites; 
+using TestPingApp.Models;
+using TestPingApp.Services.sites;
 
 namespace TestPingApp.Controllers
 {
@@ -18,10 +18,11 @@ namespace TestPingApp.Controllers
 
         public async Task<IActionResult> Index(string searchQuery)
         {
-            
-            var sites = await _dataRetriever.GetDataFromDatabaseAsync();
+            string command = "SELECT * FROM sites";
 
-       
+            var sites = await _dataRetriever.GetDataFromDatabaseAsync(command);
+
+
             if (!string.IsNullOrEmpty(searchQuery))
             {
                 sites = sites.Where(site => site.Name.Contains(searchQuery)).ToList();
