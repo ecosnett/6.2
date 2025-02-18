@@ -134,6 +134,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "EntityFrameworkCore.Testing.Moq": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
             "MSTest": {
               "target": "Package",
               "version": "[3.6.4, )"

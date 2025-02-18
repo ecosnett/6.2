@@ -3,40 +3,42 @@ using System;
 using System.Net.NetworkInformation;
 using TestPingApp.Controllers;
 
-[TestClass]
-public class PingServiceTests
+namespace tests
 {
-    [TestMethod]
-    public void PingUrl_EmptyUrl_ReturnsFailure()
+    [TestClass]
+    public class PingServiceTests
     {
+        [TestMethod]
+        public void PingUrl_EmptyUrl_ReturnsFailure()
+        {
 
-        string emptyUrl = " ";
+            string emptyUrl = " ";
 
-        var result = PingService.PingUrl(emptyUrl);
+            var result = PingService.PingUrl(emptyUrl);
 
-        Assert.AreEqual("The URL cannot be empty or whitespace.", result.Message);
-    }
+            Assert.AreEqual("The URL cannot be empty or whitespace.", result.Message);
+        }
 
-    [TestMethod]
-    public void PingUrl_ValidUrl_SuccessfulPing()
-    {
-        
-        string validUrl = "www.google.com";
-        var result = PingService.PingUrl(validUrl);
+        [TestMethod]
+        public void PingUrl_ValidUrl_SuccessfulPing()
+        {
 
-        Assert.IsNotNull(result);
-        Assert.IsTrue(result.Message.Contains("Ping to"));
-    }
+            string validUrl = "www.google.com";
+            var result = PingService.PingUrl(validUrl);
 
-    [TestMethod]
-    public void PingUrl_InvalidUrl_ReturnsFailure()
-    {
-  
-        string invalidUrl = "invalid.url.com";
+            Assert.IsNotNull(result);
+            Assert.IsTrue(result.Message.Contains("Ping to"));
+        }
 
-        var result = PingService.PingUrl(invalidUrl);
+        [TestMethod]
+        public void PingUrl_InvalidUrl_ReturnsFailure()
+        {
 
-        Assert.IsTrue(result.Message.Contains("failed"));
+            string invalidUrl = "invalid.url.com";
+
+            var result = PingService.PingUrl(invalidUrl);
+
+            Assert.IsTrue(result.Message.Contains("failed"));
+        }
     }
 }
-

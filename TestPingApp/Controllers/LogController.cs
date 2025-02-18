@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using TestPingApp.Models;
-using TestPingApp.Services.logs; 
+using TestPingApp.Services.logs;
 
 namespace TestPingApp.Controllers
 {
@@ -19,7 +19,9 @@ namespace TestPingApp.Controllers
 
         public async Task<IActionResult> Index(string SearchQuery, string DateSearchQuery)
         {
-            var logs = await _dataRetriever.GetDataFromDatabaseAsync();
+            string command = "SELECT timestamp, url, message FROM logs";
+
+            var logs = await _dataRetriever.GetLogDataFromDatabaseAsync(command);
 
             if (!string.IsNullOrEmpty(SearchQuery))
             {
@@ -35,4 +37,3 @@ namespace TestPingApp.Controllers
         }
     }
 }
- 

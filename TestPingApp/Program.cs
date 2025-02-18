@@ -1,14 +1,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Data.SqlClient;
 using TestPingApp.Services.logs;
-using TestPingApp.Services.sites; 
+using TestPingApp.Services.sites;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Register services in DI container
+
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<SiteDataRetriever>(); 
+builder.Services.AddScoped<SiteDataRetriever>();
 builder.Services.AddScoped<LogDataRetriever>();
 
 

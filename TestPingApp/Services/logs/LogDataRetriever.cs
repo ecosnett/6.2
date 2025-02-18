@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Data.SQLite;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
 using TestPingApp.Models;
 
@@ -7,29 +7,47 @@ namespace TestPingApp.Services.logs
 {
     public class LogDataRetriever
     {
-        private readonly string _connectionString = "Data Source=D:\\Users\\edward\\codes\\C#\\PingWebApp\\sites.db";
+        private readonly string _connectionString = $"Server={Config.Server};Database={Config.Database};User Id={Config.Username};Password={Config.Password};";
 
-        public async Task<List<LogDataModel>> GetDataFromDatabaseAsync()
+        public async Task<List<LogDataModel>> GetLogDataFromDatabaseAsync(string command)
         {
             var data = new List<LogDataModel>();
-
-            using (var conn = new SQLiteConnection(_connectionString))
+            try
             {
-                await conn.OpenAsync();
-                using (var cmd = new SQLiteCommand("SELECT timestamp, url, message FROM site_logs", conn))
-                using (var reader = await cmd.ExecuteReaderAsync())
+                if (string.IsNullOrWhiteSpace(command))
                 {
-                    while (await reader.ReadAsync())
+                    throw new ArgumentException("The command cannot be empty or whitespace.");
+                }
+
+                using (var conn = new SqlConnection(_connectionString))
+                {
+                    await conn.OpenAsync();
+                    using (var cmd = new SqlCommand(command, conn))
+                    using (var reader = await cmd.ExecuteReaderAsync())
                     {
-                        data.Add(new LogDataModel
+                        while (await reader.ReadAsync())
                         {
-                            TimeStamp = reader.GetDateTime(0),
-                            Url = reader.GetString(1),
-                            Message = reader.GetString(2)
-                        });
+                            data.Add(new LogDataModel
+                            {
+                                TimeStamp = reader.GetDateTime(0),
+                                Url = reader.GetString(1),
+                                Message = reader.GetString(2)
+                            });
+                        }
                     }
                 }
+
+                if (data.Count == 0)
+                {
+                    throw new KeyNotFoundException("No records found in the database.");
+                }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                throw;
+            }
+
             return data;
         }
     }
