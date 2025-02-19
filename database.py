@@ -1,14 +1,31 @@
-import sqlite3 
+import pyodbc # type: ignore 
+from datetime import datetime
 
-conn = sqlite3.connect("D:\\Users\\edward\\codes\\C#\\PingWebApp\\sites.db")
+dt = datetime.strptime('1111-01-01 01:01:01', '%Y-%m-%d %H:%M:%S')
 
-cur = conn.cursor()
-cur.execute("CREATE TABLE IF NOT EXISTS sites (url TEXT PRIMARY KEY, name TEXT)")
+server = 'dblogs.database.windows.net'  
+database = 'logs'  
+username = 'azureadmin' 
+password = 'Tr1vial5'  
+driver = '{ODBC Driver 17 for SQL Server}'  
 
-cur.execute("INSERT INTO sites (url, name) VALUES ('www.github.com', 'github')")
-#cur.execute("DELETE FROM sites WHERE name = 'github' ")
-conn.commit()
+conn_str = f'DRIVER={driver};SERVER={server};DATABASE={database};UID={username};PWD={password}'
 
-cur.execute("CREATE TABLE IF NOT EXISTS site_logs (timestamp TEXT PRIMARY KEY, url TEXT, message TEXT, FOREIGN KEY (url) REFERENCES sites(url))")
-conn.commit()
-conn.close()
+try:
+    conn = pyodbc.connect(conn_str)
+    print("Connection successful!")
+
+    cursor = conn.cursor()
+
+    #cursor.execute("CREATE TABLE logs (timestamp DATETIME PRIMARY KEY, url VARCHAR(255),message VARCHAR(255));") 
+    #cursor.execute("DELETE FROM logs")
+    conn.commit()
+ 
+    cursor.execute("SELECT * FROM logs")
+    for i in cursor.fetchall():
+        print(i)
+
+    cursor.close()
+    conn.close()
+except Exception as e:
+    print("Error:", e)

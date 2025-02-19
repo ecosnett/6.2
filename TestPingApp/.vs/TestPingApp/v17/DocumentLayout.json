@@ -3,6 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|c:\\users\\edward.nevreg.000\\source\\repos\\pingwebapp\\testpingapp\\services\\sites\\sitedataretriever.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|solutionrelative:services\\sites\\sitedataretriever.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -20,6 +21,51 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{9EEB341F-DA6D-4764-8D28-93E6A8AEDC2B}|..\\tests\\tests.csproj|c:\\users\\edward.nevreg.000\\source\\repos\\pingwebapp\\tests\\test3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|d:\\users\\edward\\codes\\c#\\6.2\\pingproxywebapp\\testpingapp\\services\\sites\\sitedataretriever.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|solutionrelative:services\\sites\\sitedataretriever.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|d:\\users\\edward\\codes\\c#\\6.2\\pingproxywebapp\\testpingapp\\services\\logs\\logdataretriever.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|solutionrelative:services\\logs\\logdataretriever.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|d:\\users\\edward\\codes\\c#\\6.2\\pingproxywebapp\\testpingapp\\views\\log\\logs_page.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|solutionrelative:views\\log\\logs_page.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|d:\\users\\edward\\codes\\c#\\6.2\\pingproxywebapp\\testpingapp\\services\\logs\\logdatainsert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|solutionrelative:services\\logs\\logdatainsert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|d:\\users\\edward\\codes\\c#\\6.2\\pingproxywebapp\\testpingapp\\models\\logdatamodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|solutionrelative:models\\logdatamodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|d:\\users\\edward\\codes\\c#\\6.2\\pingproxywebapp\\testpingapp\\models\\sitedatamodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|solutionrelative:models\\sitedatamodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|d:\\users\\edward\\codes\\c#\\6.2\\pingproxywebapp\\testpingapp\\views\\site\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|solutionrelative:views\\site\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|d:\\users\\edward\\codes\\c#\\6.2\\pingproxywebapp\\testpingapp\\controllers\\logcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|solutionrelative:controllers\\logcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|d:\\users\\edward\\codes\\c#\\6.2\\pingproxywebapp\\testpingapp\\controllers\\sitecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|solutionrelative:controllers\\sitecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EEB341F-DA6D-4764-8D28-93E6A8AEDC2B}|..\\tests\\tests.csproj|d:\\users\\edward\\codes\\c#\\6.2\\pingproxywebapp\\tests\\tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EEB341F-DA6D-4764-8D28-93E6A8AEDC2B}|..\\tests\\tests.csproj|d:\\users\\edward\\codes\\c#\\6.2\\pingproxywebapp\\tests\\test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> azure/DEVELOPMENT
     },
     {
       "AbsoluteMoniker": "D:0:0:{9EEB341F-DA6D-4764-8D28-93E6A8AEDC2B}|..\\tests\\tests.csproj|c:\\users\\edward.nevreg.000\\source\\repos\\pingwebapp\\tests\\test4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -29,6 +75,7 @@
       "RelativeMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|solutionrelative:controllers\\pingurl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|c:\\users\\edward.nevreg.000\\source\\repos\\pingwebapp\\testpingapp\\services\\logs\\logdatadelete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|solutionrelative:services\\logs\\logdatadelete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -38,6 +85,14 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{9EEB341F-DA6D-4764-8D28-93E6A8AEDC2B}|..\\tests\\tests.csproj|c:\\users\\edward.nevreg.000\\source\\repos\\pingwebapp\\tests\\test2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|d:\\users\\edward\\codes\\c#\\6.2\\pingproxywebapp\\testpingapp\\controllers\\pingapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|solutionrelative:controllers\\pingapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|d:\\users\\edward\\codes\\c#\\6.2\\pingproxywebapp\\testpingapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> azure/DEVELOPMENT
     },
     {
       "AbsoluteMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|c:\\users\\edward.nevreg.000\\source\\repos\\pingwebapp\\testpingapp\\controllers\\logcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -48,6 +103,7 @@
       "RelativeMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|solutionrelative:testpingapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{9EEB341F-DA6D-4764-8D28-93E6A8AEDC2B}|..\\tests\\tests.csproj|c:\\users\\edward.nevreg.000\\source\\repos\\pingwebapp\\tests\\test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -77,6 +133,10 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\tests\\tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+=======
+      "AbsoluteMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|d:\\users\\edward\\codes\\c#\\6.2\\pingproxywebapp\\testpingapp\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26792F05-9F14-4C7D-9E07-CC7EAAB764FB}|TestPingApp.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> azure/DEVELOPMENT
     }
   ],
   "DocumentGroupContainers": [
@@ -86,7 +146,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 22,
+=======
+          "SelectedChildIndex": 17,
+>>>>>>> azure/DEVELOPMENT
           "Children": [
             {
               "$type": "Bookmark",
@@ -102,7 +166,11 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Bookmark",
@@ -137,7 +205,20 @@
               "Name": "ST:12:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 7,
               "Title": "LogDataDelete.cs",
               "DocumentMoniker": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\Services\\logs\\LogDataDelete.cs",
@@ -298,18 +379,143 @@
               "Title": "MSTestSettings.cs",
               "DocumentMoniker": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\tests\\MSTestSettings.cs",
               "ToolTip": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\tests\\MSTestSettings.cs",
+=======
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\Program.cs",
+              "RelativeDocumentMoniker": "..\\Program.cs",
+              "ToolTip": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\Program.cs",
+              "RelativeToolTip": "..\\Program.cs",
+>>>>>>> azure/DEVELOPMENT
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T10:14:14.389Z",
+              "WhenOpened": "2025-02-18T15:13:13.786Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SiteDataRetriever.cs",
+              "DocumentMoniker": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\Services\\sites\\SiteDataRetriever.cs",
+              "RelativeDocumentMoniker": "Services\\sites\\SiteDataRetriever.cs",
+              "ToolTip": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\Services\\sites\\SiteDataRetriever.cs",
+              "RelativeToolTip": "Services\\sites\\SiteDataRetriever.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T09:14:03.475Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 20,
+=======
+              "DocumentIndex": 2,
+              "Title": "logs_page.cshtml",
+              "DocumentMoniker": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\Views\\Log\\logs_page.cshtml",
+              "RelativeDocumentMoniker": "Views\\Log\\logs_page.cshtml",
+              "ToolTip": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\Views\\Log\\logs_page.cshtml",
+              "RelativeToolTip": "Views\\Log\\logs_page.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-17T11:37:46.5Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LogDataRetriever.cs",
+              "DocumentMoniker": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\Services\\logs\\LogDataRetriever.cs",
+              "RelativeDocumentMoniker": "Services\\logs\\LogDataRetriever.cs",
+              "ToolTip": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\Services\\logs\\LogDataRetriever.cs",
+              "RelativeToolTip": "Services\\logs\\LogDataRetriever.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T09:12:30.72Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LogDataInsert.cs",
+              "DocumentMoniker": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\Services\\logs\\LogDataInsert.cs",
+              "RelativeDocumentMoniker": "Services\\logs\\LogDataInsert.cs",
+              "ToolTip": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\Services\\logs\\LogDataInsert.cs",
+              "RelativeToolTip": "Services\\logs\\LogDataInsert.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T12:58:29.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SiteDataModel.cs",
+              "DocumentMoniker": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\Models\\SiteDataModel.cs",
+              "RelativeDocumentMoniker": "Models\\SiteDataModel.cs",
+              "ToolTip": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\Models\\SiteDataModel.cs",
+              "RelativeToolTip": "Models\\SiteDataModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T12:50:02.152Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LogDataModel.cs",
+              "DocumentMoniker": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\Models\\LogDataModel.cs",
+              "RelativeDocumentMoniker": "Models\\LogDataModel.cs",
+              "ToolTip": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\Models\\LogDataModel.cs",
+              "RelativeToolTip": "Models\\LogDataModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T12:30:47.877Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
+              "ToolTip": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T12:30:46.911Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SiteController.cs",
+              "DocumentMoniker": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\Controllers\\SiteController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SiteController.cs",
+              "ToolTip": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\Controllers\\SiteController.cs",
+              "RelativeToolTip": "Controllers\\SiteController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA1wB8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T11:59:39.534Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Test1.cs",
+              "DocumentMoniker": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\tests\\Test1.cs",
+              "RelativeDocumentMoniker": "..\\tests\\Test1.cs",
+              "ToolTip": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\tests\\Test1.cs",
+              "RelativeToolTip": "..\\tests\\Test1.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAUwCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T09:49:42.855Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+>>>>>>> azure/DEVELOPMENT
               "Title": "tests.csproj",
               "DocumentMoniker": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\tests\\tests.csproj",
               "ToolTip": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\tests\\tests.csproj",
+<<<<<<< HEAD
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAANAAAAAAAAAA==",
+=======
+              "RelativeToolTip": "..\\tests\\tests.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+>>>>>>> azure/DEVELOPMENT
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-02-04T09:49:48.478Z",
               "EditorCaption": ""
@@ -317,6 +523,7 @@
             {
               "$type": "Document",
               "DocumentIndex": 14,
+<<<<<<< HEAD
               "Title": "Test1.cs",
               "DocumentMoniker": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\tests\\Test1.cs",
               "ToolTip": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\tests\\Test1.cs",
@@ -326,32 +533,56 @@
             {
               "$type": "Document",
               "DocumentIndex": 15,
+=======
+>>>>>>> azure/DEVELOPMENT
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\Program.cs",
               "RelativeToolTip": "Program.cs",
+<<<<<<< HEAD
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+=======
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+>>>>>>> azure/DEVELOPMENT
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T15:57:18.898Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-03T15:57:18.898Z"
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 18,
+=======
+              "DocumentIndex": 13,
+>>>>>>> azure/DEVELOPMENT
               "Title": "PingApiController.cs",
               "DocumentMoniker": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\Controllers\\PingApiController.cs",
               "RelativeDocumentMoniker": "Controllers\\PingApiController.cs",
               "ToolTip": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\Controllers\\PingApiController.cs",
               "RelativeToolTip": "Controllers\\PingApiController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T11:01:11.816Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-03T11:01:11.816Z"
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 11,
+=======
+              "DocumentIndex": 8,
+              "Title": "LogController.cs",
+              "DocumentMoniker": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\Controllers\\LogController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LogController.cs",
+              "ToolTip": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\Controllers\\LogController.cs",
+              "RelativeToolTip": "Controllers\\LogController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-30T15:27:07.399Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+>>>>>>> azure/DEVELOPMENT
               "Title": "TestPingApp.csproj",
               "DocumentMoniker": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\TestPingApp.csproj",
               "RelativeDocumentMoniker": "TestPingApp.csproj",
@@ -364,25 +595,37 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 13,
+=======
+              "DocumentIndex": 7,
+>>>>>>> azure/DEVELOPMENT
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\Views\\Site\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Site\\Index.cshtml",
               "ToolTip": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\Views\\Site\\Index.cshtml",
               "RelativeToolTip": "Views\\Site\\Index.cshtml",
+<<<<<<< HEAD
               "ViewState": "AgIAADoAAAAAAAAAAAAAwGMAAAAAAAAAAAAAAA==",
+=======
+              "ViewState": "AgIAAEEAAAAAAAAAAAAAAEQAAAB8AAAAAAAAAA==",
+>>>>>>> azure/DEVELOPMENT
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-30T12:33:51.958Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-30T12:33:51.958Z"
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 6,
+=======
+              "DocumentIndex": 12,
+>>>>>>> azure/DEVELOPMENT
               "Title": "PingUrl.cs",
               "DocumentMoniker": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\Controllers\\PingUrl.cs",
               "RelativeDocumentMoniker": "Controllers\\PingUrl.cs",
               "ToolTip": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\Controllers\\PingUrl.cs",
               "RelativeToolTip": "Controllers\\PingUrl.cs",
+<<<<<<< HEAD
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T09:57:30.656Z",
@@ -400,6 +643,15 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-05T12:08:42.283Z",
               "EditorCaption": ""
+=======
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T09:57:30.656Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+>>>>>>> azure/DEVELOPMENT
             }
           ]
         }

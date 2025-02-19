@@ -22,7 +22,11 @@ namespace tests
         public async Task Test_GetSiteDataFromDatabaseAsync_ReturnData()
         {
             var dataRetriever = new SiteDataRetriever();
+<<<<<<< HEAD
             string command = "SELECT name, url FROM sites where name = 'google'";
+=======
+            string command = "SELECT * FROM sites where name = 'google'";
+>>>>>>> azure/DEVELOPMENT
 
             List<SiteDataModel> site = await dataRetriever.GetDataFromDatabaseAsync(command);
 

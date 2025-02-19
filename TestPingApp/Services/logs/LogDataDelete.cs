@@ -1,27 +1,28 @@
-﻿using System.Data.SQLite;
+using System;
+using System.Data.SqlClient;
+using System.Threading.Tasks;
 
 namespace TestPingApp.Services.logs
 {
     public class LogDataDelete
     {
+        private static readonly string _connectionString = $"Server={Config.Server};Database={Config.Database};User Id={Config.Username};Password={Config.Password};Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+
         public async static Task DeleteLog(DateTime timestamp, string url)
         {
-            string _connectionString = "Data Source=D:\\Users\\edward\\codes\\C#\\PingWebApp\\sites.db;Version=3;BusyTimeout=30000;";
-
             try
             {
-                using (var conn = new SQLiteConnection(_connectionString))
+                using (var conn = new SqlConnection(_connectionString))
                 {
                     await conn.OpenAsync();
 
-                    using (var command = new SQLiteCommand("DELETE FROM site_logs WHERE url = @url AND timestamp = @timestamp", conn))
+                    using (var command = new SqlCommand("DELETE FROM logs WHERE url = @url AND timestamp = @timestamp", conn))
                     {
                         command.Parameters.AddWithValue("@url", url);
                         command.Parameters.AddWithValue("@timestamp", timestamp);
 
-                        command.ExecuteNonQuery();
+                        await command.ExecuteNonQueryAsync();
                     }
-                    conn.Close();
                 }
             }
             catch (Exception ex)
