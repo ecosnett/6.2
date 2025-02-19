@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TestPingApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc8f0be11e28f41bfa612a52eb05f038303c765b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2a4a403af001c4b2f9bbcc87aac041a3613f4ea4")]
 [assembly: System.Reflection.AssemblyProductAttribute("TestPingApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TestPingApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
