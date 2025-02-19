@@ -9199,11 +9199,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\tests\\tests.csproj",
+      "projectUniqueName": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\tests\\tests.csproj",
       "projectName": "tests",
-      "projectPath": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\tests\\tests.csproj",
+      "projectPath": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\tests\\tests.csproj",
       "packagesPath": "C:\\Users\\edward.NEVREG.000\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\tests\\obj\\",
+      "outputPath": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -9225,8 +9225,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\TestPingApp.csproj": {
-              "projectPath": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\TestPingApp.csproj"
+            "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\TestPingApp.csproj": {
+              "projectPath": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\TestPingApp.csproj"
             }
           }
         }
