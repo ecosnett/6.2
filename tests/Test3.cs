@@ -25,6 +25,7 @@ namespace tests
         [TestMethod]
         public async Task Test_GetLogDataFromDatabaseAsync_ReturnData()
         {
+<<<<<<< HEAD
             //DateTime timestamp = new DateTime(1111, 01, 01, 01, 01, 01);
             //string url = "www.TestUrl.com";
             //string message = "Test entry";
@@ -32,6 +33,15 @@ namespace tests
 
             var dataRetriever = new LogDataRetriever();
             string command = "SELECT timestamp, url, message FROM site_logs WHERE timestamp = '1111-01-01 01:01:01'";
+=======
+            DateTime timestamp = new DateTime(1753, 01, 01, 00, 00, 00);
+            string url = "www.TestUrl.com";
+            string message = "Test entry";
+            LogDataInsert.InsertLog(timestamp, message, url);
+
+            var dataRetriever = new LogDataRetriever();
+            string command = "SELECT timestamp, url, message FROM logs WHERE timestamp = '1753-01-01 00:00:00'";
+>>>>>>> azure/DEVELOPMENT
 
             List<LogDataModel> log = await dataRetriever.GetLogDataFromDatabaseAsync(command);
 

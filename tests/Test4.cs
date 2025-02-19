@@ -19,6 +19,7 @@ namespace tests
             string message = "Test message";
             string url = "www.Test.com";
 
+<<<<<<< HEAD
             var insert_result = LogDataInsert.InsertLog(timestamp, message, url);
 
             Assert.AreEqual(Task.CompletedTask, insert_result);
@@ -26,6 +27,11 @@ namespace tests
             var delete_result = LogDataDelete.DeleteLog(timestamp, url);
 
             Assert.AreEqual(Task.CompletedTask, delete_result);
+=======
+            await LogDataInsert.InsertLog(timestamp, message, url);
+
+            await LogDataDelete.DeleteLog(timestamp, url);
+>>>>>>> azure/DEVELOPMENT
         }
 
         [TestMethod]
@@ -44,14 +50,25 @@ namespace tests
         [TestMethod]
         public async Task InsertData_DoubleRecordAsync()
         {
+<<<<<<< HEAD
             DateTime timestamp = new DateTime(1111, 01, 01, 01, 01, 01);
             string url = "www.TestUrl.com";
             string message = "Test entry";
        
+=======
+            DateTime timestamp = new DateTime(1753, 01, 01, 00, 00, 00);
+            string url = "www.TestUrl.com";
+            string message = "Test entry";
+
+>>>>>>> azure/DEVELOPMENT
             await Assert.ThrowsExceptionAsync<Exception>(async () =>
             {
                 await LogDataInsert.InsertLog(timestamp, message, url);
             });
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> azure/DEVELOPMENT

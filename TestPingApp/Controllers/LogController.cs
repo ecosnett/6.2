@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using TestPingApp.Models;
-using TestPingApp.Services.logs; 
+using TestPingApp.Services.logs;
 
 namespace TestPingApp.Controllers
 {
@@ -19,7 +19,11 @@ namespace TestPingApp.Controllers
 
         public async Task<IActionResult> Index(string SearchQuery, string DateSearchQuery)
         {
+<<<<<<< HEAD
             string command = "SELECT timestamp, url, message FROM site_logs";
+=======
+            string command = "SELECT timestamp, url, message FROM logs";
+>>>>>>> azure/DEVELOPMENT
 
             var logs = await _dataRetriever.GetLogDataFromDatabaseAsync(command);
 
@@ -37,4 +41,3 @@ namespace TestPingApp.Controllers
         }
     }
 }
- 

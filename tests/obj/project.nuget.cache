@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "vwUj2CEsmkQ=",
+=======
+  "dgSpecHash": "ses7EVQOQHw=",
+>>>>>>> azure/DEVELOPMENT
   "success": true,
   "projectFilePath": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\tests\\tests.csproj",
   "expectedPackageFiles": [

@@ -22,7 +22,11 @@ namespace tests
         [TestMethod]
         public void PingUrl_ValidUrl_SuccessfulPing()
         {
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> azure/DEVELOPMENT
             string validUrl = "www.google.com";
             var result = PingService.PingUrl(validUrl);
 
@@ -33,7 +37,11 @@ namespace tests
         [TestMethod]
         public void PingUrl_InvalidUrl_ReturnsFailure()
         {
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> azure/DEVELOPMENT
             string invalidUrl = "invalid.url.com";
 
             var result = PingService.PingUrl(invalidUrl);
@@ -41,5 +49,9 @@ namespace tests
             Assert.IsTrue(result.Message.Contains("failed"));
         }
     }
+<<<<<<< HEAD
 }
 
+=======
+}
+>>>>>>> azure/DEVELOPMENT
