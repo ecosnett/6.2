@@ -18,7 +18,7 @@ try:
     cursor = conn.cursor()
 
     #cursor.execute("CREATE TABLE logs (timestamp DATETIME PRIMARY KEY, url VARCHAR(255),message VARCHAR(255));") 
-    #cursor.execute("DELETE FROM logs")
+    #cursor.execute("DELETE FROM logs WHERE url = 'www.Test.com'")
     conn.commit()
  
     cursor.execute("SELECT * FROM logs")
