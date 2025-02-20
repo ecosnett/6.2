@@ -4,14 +4,17 @@ using Microsoft.Extensions.Hosting;
 using System.Data.SqlClient;
 using TestPingApp.Services.logs;
 using TestPingApp.Services.sites;
+using TestPingApp.Services.Timer;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddMemoryCache();
 builder.Services.AddScoped<SiteDataRetriever>();
 builder.Services.AddScoped<LogDataRetriever>();
-
+builder.Services.AddSingleton<SiteDataRetriever>(); 
+builder.Services.AddHostedService<TimedBackgroundService>();
 
 var app = builder.Build();
 

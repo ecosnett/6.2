@@ -8,7 +8,7 @@ namespace TestPingApp.Services.logs
     {
         private static readonly string _connectionString = $"Server={Config.Server};Database={Config.Database};User Id={Config.Username};Password={Config.Password};Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
-        public async static Task InsertLog(DateTime timestamp, string message, string url)
+        public async static Task InsertLog(DateTime timestamp, string message, string url, string type)
         {
             try
             {
@@ -20,11 +20,12 @@ namespace TestPingApp.Services.logs
                 using (var conn = new SqlConnection(_connectionString))
                 {
                     await conn.OpenAsync();
-                    using (var command = new SqlCommand("INSERT INTO logs (timestamp, url, message) VALUES (@timestamp, @url, @message)", conn))
+                    using (var command = new SqlCommand("INSERT INTO logs (timestamp, url, message, type) VALUES (@timestamp, @url, @message, @type)", conn))
                     {
                         command.Parameters.AddWithValue("@timestamp", timestamp);
                         command.Parameters.AddWithValue("@url", url);
                         command.Parameters.AddWithValue("@message", message);
+                        command.Parameters.AddWithValue("@type", type);
 
                         await command.ExecuteNonQueryAsync();
                     }

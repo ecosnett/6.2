@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\TestPingApp.csproj": {}
+    "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\TestPingApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\TestPingApp.csproj": {
+    "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\TestPingApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\TestPingApp.csproj",
+        "projectUniqueName": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\TestPingApp.csproj",
         "projectName": "TestPingApp",
-        "projectPath": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\TestPingApp.csproj",
+        "projectPath": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\TestPingApp.csproj",
         "packagesPath": "C:\\Users\\edward.NEVREG.000\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\obj\\",
+        "outputPath": "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\edward.NEVREG.000\\source\\repos\\PingWebApp\\TestPingApp\\NuGet.Config",
+          "D:\\Users\\edward\\codes\\C#\\6.2\\PingProxyWebApp\\TestPingApp\\NuGet.Config",
           "C:\\Users\\edward.NEVREG.000\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"

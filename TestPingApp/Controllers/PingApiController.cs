@@ -6,10 +6,12 @@ namespace TestPingApp.Controllers
     [Route("api/ping")]
     public class PingApiController : ControllerBase
     {
+
         [HttpGet]
         public IActionResult PingUrl([FromQuery] string url)
         {
-            var result = PingService.PingUrl(url);
+            string type = "Mannual";
+            var result = PingService.PingUrl(url, type);
             return Ok(result);
         }
     }

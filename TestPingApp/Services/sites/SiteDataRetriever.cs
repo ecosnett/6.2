@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Caching.Memory;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
@@ -9,9 +10,20 @@ namespace TestPingApp.Services.sites
     public class SiteDataRetriever
     {
         private readonly string _connectionString = $"Server={Config.Server};Database={Config.Database};User Id={Config.Username};Password={Config.Password};Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        private readonly IMemoryCache _cache;
+
+        public SiteDataRetriever(IMemoryCache cache)
+        {
+            _cache = cache;
+        }
 
         public async Task<List<SiteDataModel>> GetDataFromDatabaseAsync(string command)
         {
+            if (_cache.TryGetValue("site_data", out List<SiteDataModel>? cachedData))
+            {
+                return cachedData!;
+            }
+
             var data = new List<SiteDataModel>();
 
             try
@@ -43,6 +55,7 @@ namespace TestPingApp.Services.sites
                 {
                     throw new KeyNotFoundException("No records found in the database.");
                 }
+                _cache.Set("site_data", data, TimeSpan.FromMinutes(10));
             }
             catch (Exception ex)
             {
