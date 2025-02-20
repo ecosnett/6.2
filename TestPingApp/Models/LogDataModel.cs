@@ -6,13 +6,16 @@
         public string Url { get; set; }
         public string Message { get; set; }
 
+        public string Type { get; set; }
+
         public LogDataModel() { }
 
-        public LogDataModel(DateTime datetime, string message, string url)
+        public LogDataModel(DateTime datetime, string message, string url, string type)
         {
             TimeStamp = datetime;
             Message = message;
             Url = url;
+            Type = type;
         }
     }
 }

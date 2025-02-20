@@ -31,7 +31,8 @@ namespace TestPingApp.Services.logs
                             {
                                 TimeStamp = reader.GetDateTime(0),
                                 Url = reader.GetString(1),
-                                Message = reader.GetString(2)
+                                Message = reader.GetString(2),
+                                Type = reader.GetString(3)
                             });
                         }
                     }
