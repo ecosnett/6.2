@@ -253,7 +253,6 @@ D:\Users\edward\codes\C#\6.2\PingProxyWebApp\TestPingApp\obj\Debug\net8.0\refint
 D:\Users\edward\codes\C#\6.2\PingProxyWebApp\TestPingApp\obj\Debug\net8.0\TestPingApp.pdb
 D:\Users\edward\codes\C#\6.2\PingProxyWebApp\TestPingApp\obj\Debug\net8.0\TestPingApp.genruntimeconfig.cache
 D:\Users\edward\codes\C#\6.2\PingProxyWebApp\TestPingApp\obj\Debug\net8.0\ref\TestPingApp.dll
-D:\Users\edward\codes\C#\6.2\PingProxyWebApp\TestPingApp\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\edward.NEVREG.000\source\repos\PingWebApp\TestPingApp\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\edward.NEVREG.000\source\repos\PingWebApp\TestPingApp\bin\Debug\net8.0\appsettings.json
 C:\Users\edward.NEVREG.000\source\repos\PingWebApp\TestPingApp\bin\Debug\net8.0\nuget.config
@@ -342,3 +341,4 @@ C:\Users\edward.NEVREG.000\source\repos\PingWebApp\TestPingApp\obj\Debug\net8.0\
 C:\Users\edward.NEVREG.000\source\repos\PingWebApp\TestPingApp\obj\Debug\net8.0\TestPingApp.pdb
 C:\Users\edward.NEVREG.000\source\repos\PingWebApp\TestPingApp\obj\Debug\net8.0\TestPingApp.genruntimeconfig.cache
 C:\Users\edward.NEVREG.000\source\repos\PingWebApp\TestPingApp\obj\Debug\net8.0\ref\TestPingApp.dll
+D:\Users\edward\codes\C#\6.2\PingProxyWebApp\TestPingApp\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

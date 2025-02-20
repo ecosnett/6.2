@@ -6,7 +6,7 @@ namespace TestPingApp.Controllers
 {
     public class PingService
     {
-        public static PingResult PingUrl(string url)
+        public static PingResult PingUrl(string url, string type)
         {
             try
             {
@@ -30,7 +30,7 @@ namespace TestPingApp.Controllers
                 {
                     string message = $"Ping to {url} successful. Roundtrip time: {reply.RoundtripTime} ms, Address: {reply.Address}, Time to Live (TTL): {reply.Options.Ttl}, Buffer Size: {reply.Buffer.Length}";
 
-                    LogDataInsert.InsertLog(timestamp, message, url);
+                    LogDataInsert.InsertLog(timestamp, message, url, type);
 
                     return new PingResult
                     {
