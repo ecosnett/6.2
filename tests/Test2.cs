@@ -5,6 +5,7 @@ using System.Security.Policy;
 using System.Xml.Linq;
 using TestPingApp.Models;
 using TestPingApp.Services.sites;
+using Microsoft.Extensions.Caching.Memory;  
 
 namespace tests
 {
@@ -13,31 +14,32 @@ namespace tests
     {
         private readonly SiteDataRetriever _dataRetriever;
 
-        public SiteRecieverTests()
+        public SiteRecieverTests() 
         {
-            _dataRetriever = new SiteDataRetriever();
+            IMemoryCache memoryCache = new MemoryCache(new MemoryCacheOptions()); 
+            _dataRetriever = new SiteDataRetriever(memoryCache); 
         }
 
         [TestMethod]
         public async Task Test_GetSiteDataFromDatabaseAsync_ReturnData()
         {
-            var dataRetriever = new SiteDataRetriever();
 
             string command = "SELECT * FROM sites where name = 'google'";
 
+            var sites = await _dataRetriever.GetDataFromDatabaseAsync(command);
 
-            List<SiteDataModel> site = await dataRetriever.GetDataFromDatabaseAsync(command);
-
-            Assert.IsNotNull(site);
-            Assert.IsTrue(site.Count > 0);
-            Assert.IsTrue(site[0].Name.Contains("google"));
-            Assert.IsTrue(site[0].Url.Contains("www.google.com"));
+            Assert.IsNotNull(sites);
+            Assert.IsTrue(sites.Count > 0);
+            Assert.IsTrue(sites[0].Name.Contains("google"));
+            Assert.IsTrue(sites[0].Url.Contains("www.google.com"));
         }
 
         [TestMethod]
         public async Task Test_GetDataFromDatabaseAsync_EmptyCommand()
         {
-            var dataRetriever = new SiteDataRetriever();
+            IMemoryCache memoryCache = new MemoryCache(new MemoryCacheOptions()); 
+            var dataRetriever = new SiteDataRetriever(memoryCache);
+
             string command = "";
             await Assert.ThrowsExceptionAsync<ArgumentException>(async () =>
             {
@@ -49,7 +51,9 @@ namespace tests
         [TestMethod]
         public async Task Test_GetDataFromDatabaseAsync_NoRecord()
         {
-            var dataRetriever = new SiteDataRetriever();
+            IMemoryCache memoryCache = new MemoryCache(new MemoryCacheOptions()); 
+            var dataRetriever = new SiteDataRetriever(memoryCache);
+
             string command = "SELECT name, url FROM sites WHERE name = 'fakename'";
 
             await Assert.ThrowsExceptionAsync<KeyNotFoundException>(async () =>

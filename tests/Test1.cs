@@ -11,10 +11,10 @@ namespace tests
         [TestMethod]
         public void PingUrl_EmptyUrl_ReturnsFailure()
         {
-
+            string type = " ";
             string emptyUrl = " ";
 
-            var result = PingService.PingUrl(emptyUrl);
+            var result = PingService.PingUrl(emptyUrl, type);
 
             Assert.AreEqual("The URL cannot be empty or whitespace.", result.Message);
         }
@@ -22,9 +22,10 @@ namespace tests
         [TestMethod]
         public void PingUrl_ValidUrl_SuccessfulPing()
         {
-
             string validUrl = "www.google.com";
-            var result = PingService.PingUrl(validUrl);
+            string type = "Test";
+
+            var result = PingService.PingUrl(validUrl, type);
 
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Message.Contains("Ping to"));
@@ -35,8 +36,9 @@ namespace tests
         {
 
             string invalidUrl = "invalid.url.com";
+            string type = "Test";
 
-            var result = PingService.PingUrl(invalidUrl);
+            var result = PingService.PingUrl(invalidUrl, type);
 
             Assert.IsTrue(result.Message.Contains("failed"));
         }

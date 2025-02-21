@@ -32,7 +32,7 @@ namespace tests
             //LogDataInsert.InsertLog(timestamp, message, url);
 
             var dataRetriever = new LogDataRetriever();
-            string command = "SELECT timestamp, url, message FROM logs WHERE timestamp = '1753-01-01 00:00:00'";
+            string command = "SELECT * FROM logs WHERE timestamp = '1753-01-01 00:00:00'";
 
 
             List<LogDataModel> log = await dataRetriever.GetLogDataFromDatabaseAsync(command);
@@ -55,12 +55,12 @@ namespace tests
         [TestMethod]
         public async Task Test_GetLogDataFromDatabaseAsync_NoRecord()
         {
-            var dataRetriever = new SiteDataRetriever();
-            string command = "SELECT name, url FROM sites WHERE name = 'fakename'";
+            var dataRetriever = new LogDataRetriever();
+            string command = "SELECT * FROM logs WHERE url = 'fakeurl'";
 
             await Assert.ThrowsExceptionAsync<KeyNotFoundException>(async () =>
             {
-                await dataRetriever.GetDataFromDatabaseAsync(command);
+                await dataRetriever.GetLogDataFromDatabaseAsync(command);
             });
         }
     }

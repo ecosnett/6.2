@@ -12,12 +12,6 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
     <PackageReference Include="MSTest" Version="3.6.4" />
   </ItemGroup>
-	
-	<ItemGroup>
-		<PackageReference Include="EntityFrameworkCore.Testing.Moq" Version="9.0.1" />
-		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
-		<PackageReference Include="MSTest" Version="3.6.4" />
-	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\TestPingApp\TestPingApp.csproj" />

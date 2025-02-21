@@ -18,8 +18,9 @@ namespace tests
             DateTime timestamp = DateTime.Now;
             string message = "Test message";
             string url = "www.Test.com";
+            string type = "Mannual";
 
-            await LogDataInsert.InsertLog(timestamp, message, url);
+            await LogDataInsert.InsertLog(timestamp, message, url, type);
 
             await LogDataDelete.DeleteLog(timestamp, url);
         }
@@ -30,10 +31,11 @@ namespace tests
             DateTime timestamp = DateTime.Now;
             string message = "";
             string url = " ";
+            string type = "";
 
             await Assert.ThrowsExceptionAsync<ArgumentException>(async () =>
             {
-                await LogDataInsert.InsertLog(timestamp, message, url);
+                await LogDataInsert.InsertLog(timestamp, message, url, type);
             });
         }
 
@@ -43,10 +45,11 @@ namespace tests
             DateTime timestamp = new DateTime(1753, 01, 01, 00, 00, 00);
             string url = "www.TestUrl.com";
             string message = "Test entry";
+            string type = "Mannual";
 
             await Assert.ThrowsExceptionAsync<Exception>(async () =>
             {
-                await LogDataInsert.InsertLog(timestamp, message, url);
+                await LogDataInsert.InsertLog(timestamp, message, url, type);
             });
         }
     }
