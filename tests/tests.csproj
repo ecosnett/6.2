@@ -7,6 +7,10 @@
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <None Remove="Test2.cs~RFfd93531e.TMP" />
+	</ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="EntityFrameworkCore.Testing.Moq" Version="9.0.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
